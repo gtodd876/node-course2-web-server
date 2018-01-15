@@ -19,9 +19,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintence.hbs');
-});
+// app.use((req, res, next) => {
+//   res.render('maintence.hbs');
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -45,6 +45,13 @@ app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Todd Page',
     welcomeMessage: 'All about me me',
+  });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Portfolio Page',
+    welcomeMessage: 'My Projects',
   });
 });
 
